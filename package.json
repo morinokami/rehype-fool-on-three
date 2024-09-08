@@ -1,0 +1,33 @@
+{
+	"name": "rehype-fool-on-three",
+	"description": "TODO:",
+	"version": "0.0.1",
+	"type": "module",
+	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/morinokami/rehype-fool-on-three.git"
+	},
+	"packageManager": "pnpm@9.8.0",
+	"keywords": [],
+	"files": ["dist"],
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"unified": "11.0.5",
+		"unist-util-visit": "5.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@tsconfig/recommended": "1.0.7",
+		"@types/hast": "3.0.4",
+		"@types/node": "22.5.4",
+		"knip": "5.29.2",
+		"pkg-pr-new": "0.0.24",
+		"typescript": "5.5.4"
+	}
+}
