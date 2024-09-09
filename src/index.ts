@@ -1,19 +1,29 @@
 import type { Root } from "hast";
+import { heading } from "hast-util-heading";
 import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
 
 const rehypeFoolOnThree: Plugin<[], Root> = () => {
 	return (tree) => {
-		visit(tree, "element", (node, index) => {
-			if (
-				node.tagName === "h1" ||
-				node.tagName === "h2" ||
-				node.tagName === "h3" ||
-				node.tagName === "h4" ||
-				node.tagName === "h5" ||
-				node.tagName === "h6"
-			) {
-				// TODO:
+		let hCount = 0;
+		visit(tree, "element", (node) => {
+			if (heading(node)) {
+				hCount += 1;
+				if (hCount && (hCount % 3 === 0 || String(hCount).includes("3"))) {
+					let textFound = false;
+					visit(node, (subNode) => {
+						if (!textFound && subNode.type === "text") {
+							subNode.value = `🤪 ${subNode.value}`;
+							textFound = true;
+						}
+					});
+					if (!textFound) {
+						node.children.unshift({
+							type: "text",
+							value: "🤪",
+						});
+					}
+				}
 			}
 		});
 	};
