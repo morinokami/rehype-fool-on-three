@@ -1,6 +1,6 @@
 {
 	"name": "rehype-fool-on-three",
-	"description": "TODO:",
+	"description": "A rehype plugin that acts silly on multiples of 3 and numbers containing 3",
 	"version": "0.0.1",
 	"type": "module",
 	"author": "Shinya Fujino <shf0811@gmail.com> (https://github.com/morinokami)",
@@ -9,25 +9,30 @@
 		"type": "git",
 		"url": "git+https://github.com/morinokami/rehype-fool-on-three.git"
 	},
-	"packageManager": "pnpm@9.8.0",
-	"keywords": [],
+	"packageManager": "pnpm@9.9.0",
+	"keywords": ["rehype"],
 	"files": ["dist"],
 	"main": "dist/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "vitest",
 		"build": "tsc"
 	},
 	"dependencies": {
+		"hast-util-heading": "3.0.0",
 		"unified": "11.0.5",
 		"unist-util-visit": "5.0.0"
 	},
 	"devDependencies": {
+		"@arethetypeswrong/cli": "0.16.1",
 		"@biomejs/biome": "1.8.3",
 		"@tsconfig/recommended": "1.0.7",
 		"@types/hast": "3.0.4",
 		"@types/node": "22.5.4",
 		"knip": "5.29.2",
 		"pkg-pr-new": "0.0.24",
-		"typescript": "5.5.4"
+		"publint": "0.2.10",
+		"rehype": "13.0.1",
+		"typescript": "5.5.4",
+		"vitest": "2.0.5"
 	}
 }
