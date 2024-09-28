@@ -2,7 +2,7 @@ import fs from "node:fs";
 import { rehype } from "rehype";
 import { describe, expect, test } from "vitest";
 
-import rehypeFooleOnThree from "./index";
+import rehypeFoolOnThree from "./index";
 
 function readFixture(name: string): string {
 	return fs.readFileSync(
@@ -18,7 +18,7 @@ describe("rehypeFoolOnThree", async () => {
 	])("%s", async (input, expected) => {
 		const file = await rehype()
 			.data("settings", { fragment: true })
-			.use(rehypeFooleOnThree)
+			.use(rehypeFoolOnThree)
 			.process(readFixture(input));
 
 		expect(file.toString()).toBe(readFixture(expected));
